@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This series is practise in Redux and thunks from website jsonplaceholder.typicode.com (fetch data-users) and count buttons
 
 ## Available Scripts
 
