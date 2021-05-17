@@ -1,10 +1,11 @@
-import { getUsers } from '../reducers/userReducer';
+import { fetchUsersData } from '../reducers/userReducer';
+import axios from 'axios';
 
 export const fetchUsers = () => async dispatch => {
   try {
-    const { data: { users } } = await fetch(`https://jsonplaceholder.typicode.com/users`);
-    dispatch(getUsers(users));
-  } catch (e) {
-    console.log(`An error happened ${e.message}`);
+    const {data} = await axios.get(`https://jsonplaceholder.typicode.com/users`)
+    dispatch(fetchUsersData(data))
+  } catch ({ message }) {
+    console.log(`An error occurred - ${message}`);
   }
 };
